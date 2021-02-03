@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src=".\..\js\jquery.js" type="text/javascript"></script>
+</head>
+<body>
+    	
+    <button id="first">点击测试弹出</button>
+    <button id="second">解除延迟</button> 
+    <!-- js放在body中，或者放在head里的入口函数中 -->
+    <script>
+        $.holdReady(true);
+        $(document).ready(function(){ 
+            var res="   abc   "
+            console.log("..."+res+"...");
+            res=$.trim(res)
+            console.log("..."+res+"...");
+            
+            console.log($.isWindow(window));
+            
+            var arr=[1,2,3,4];
+            var obj={0:1,1:2,2:3,length:3}
+            console.log($.isArray(arr));
+            console.log($.isArray(obj))
+            
+            console.log($.isFunction($))
+            // alert("123");
+            $("#first").click(function(){ 
+                alert("解除延迟后被弹出"); 
+            }) 
+        }) 
+        $("#second").click(function(){ 
+            alert("点击了第二个按钮");
+            $.holdReady(false); 
+        }) 
+    </script>
+</body>
+</html>
+<!-- 定义和用法
+$.holdReady() 函数用于暂停或恢复.ready() 事件的执行。
+
+注意：1. 该方法必须在文档靠前部分被调用，例如，在头部加载完 jQuery 脚本之后，立刻调用该方法。如果在 ready 事件已经被调用后再调用该方法，将不会起作用。
+2. 首先调用$.holdReady(true)[调用后 ready 事件将被锁定]。当准备好执行 ready 事件时，调用$.holdReady(false)。
+3. 可以对 ready 事件添加多个锁定，每个锁定对应一次$.holdReady(false)[解锁]调用。ready 事件将在所有的锁定都被解除，并且页面也已经准备好的情况下被触发。 -->
+

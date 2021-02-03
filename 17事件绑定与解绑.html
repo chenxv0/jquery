@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src=".\..\js\jquery.js" type="text/javascript"></script>
+    <script>
+        $(() => {
+            function test1(){
+                console.log(13);
+            }
+            $("button").click(test1);
+
+            $("button").on("click",()=>{
+                console.log(222);
+            })
+
+            // $("button").off();
+            // $("button").off("click");
+            $("button").off("click",test1);
+        });
+    </script>
+</head>
+<body>
+    <button>事件绑定</button>
+</body>
+</html>

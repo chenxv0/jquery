@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        function Dog(){
+            return new Dog.prototype.init();
+        }
+        Dog.prototype={
+            constructor:Dog,
+            init:function(){
+                this.name="wc";
+                this.age=1;
+            },
+            say:()=>{
+                console.log("say say say");
+                console.log(this);
+            },
+            initSay:function(){
+                // console.log(this.name,this.age);
+                console.log(this);
+            }
+        }
+        Dog.prototype.init.prototype=Dog.prototype;
+        var dog=new Dog();
+        console.log(dog.__proto__);
+        console.log(Dog.prototype);
+        dog.say();
+        // dog.init();
+        dog.initSay();
+    </script>
+</head>
+<body>
+
+</body>
+</html>

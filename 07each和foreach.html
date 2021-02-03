@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src=".\..\js\jquery.js" type="text/javascript"></script>
+    <script>
+        //遍历数组
+        var arr=[1,2,3,4,5];
+        // arr.forEach((val,index)=>{
+        //     console.log(val,index);
+        // });
+        
+        // $.each(arr,(index,value)=>{
+        //     console.log(index,value);
+        // })
+        //遍历伪数组
+        var obj={0:"a",1:"b",2:"c",length:3};
+        // obj.forEach((val,index)=>{
+        //     console.log(val,index);
+        // }) //报错
+        // $.each(obj,(index,val)=>{
+        //     console.log(index, val);
+        // })
+        console.log($.each(obj, (index, val) => {}));
+        console.log($.each(arr, (index, val) => {}));
+    </script>
+</head>
+<body>
+
+</body>
+</html>

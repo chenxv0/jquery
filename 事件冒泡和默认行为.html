@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin: 0px;
+            padding: 0px;
+        }
+        .father{
+            background: #007DDC;
+            width: 250px;
+            height: 250px;
+        }
+        .son{
+            background: #0f0;
+            width: 100px;
+            height:100px;
+        }
+
+    </style>
+    <script src="js\jquery.js"></script>
+</head>
+<body>
+    <div class="father">
+        <div class="son"></div>
+    </div>
+    <script>
+        $(function(){
+            //冒泡事件和默认行为
+            // $(".son").click(function(event) {
+            //     alert("son");
+            //     // event.stopPropagation();
+            // });
+            // $(".father").click(function() {
+            //     alert("father");
+            // });
+            // // $(".son").trigger("click");
+            // $(".son").triggerHandler("click");
+            //自定义事件
+            $(".son").on("myclick.cx",function(){
+                alert("son");
+            });
+            $(".son").on("myclick.cx1",function(){
+                alert("son 1");
+            });
+            $(".father").on("myclick.cx",function(){
+                alert("father");
+            });
+            $(".father").on("myclick.cx1",function(){
+                alert("father1");
+            });
+            $(".son").triggerHandler("myclick");
+        });
+    </script>
+</body>
+</html>

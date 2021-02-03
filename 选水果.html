@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            font-family: 微软雅黑;
+        }
+        select{
+            width:100px;
+            height: 100px;
+        }
+    </style>
+</head>
+<body>
+    <h1>水果选择</h1>
+    <form action="">
+        <select name="" id="s1" size="2">
+            <option value="">选择水果</option>
+            <option value="">苹果</option>
+            <option value="">橘子</option>
+            <option value="">香蕉</option>
+            <option value="">菠萝</option>
+        </select>
+        <input type="button" value=">>" id="btn">
+        <select name="" id="s2" size="2">
+            123
+        </select>
+    </form>
+    <script>
+        btn=document.getElementById('btn');
+        s1=document.getElementById('s1');
+        s2=document.getElementById('s2');
+        opts=s1.options;
+        btn.onclick=function(){
+            idx=s1.selectedIndex;
+            s2.innerHTML+=opts[idx].outerHTML;
+        }
+    </script>
+</body>
+</html>

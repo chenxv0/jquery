@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src=".\..\js\jquery.js" type="text/javascript"></script>
+    <script>
+        $(() => {
+            console.log($("div:empty"));
+            console.log($("div:parent"));
+            console.log($("div:contains('我是')"));
+            console.log($("div:has(p)"));
+        });
+    </script>
+</head>
+<body>
+    <div></div>
+    <div class="one">123</div>
+    <div><p>我是文本</p></div>
+    <div><span>我是span</span></div>
+</body>
+</html>

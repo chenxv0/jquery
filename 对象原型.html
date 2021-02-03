@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="js\jquery.js"></script>
+    <script>
+
+            function Dog(){
+                return new Dog.prototype.init();
+            }
+            Dog.prototype={
+                constructor:Dog,
+                init:function(){
+                    this.name="wc";
+                    this.age=1;
+                },
+                say1:function(){
+                    console.log(this.name,this.age);
+                }
+            };
+            Dog.prototype.init.prototype=Dog.prototype;
+            var d=new Dog();
+            // d.init();
+            // d.say1(); //不初始化的话就是undefined
+
+            d.say1();
+            console.log(d.name);
+            function Cat(){
+                this.name="Kitty";
+                this.age=1;
+                this.say1=function(){
+                    console.log(this.name,this.age);
+                }
+            }
+            // Cat.prototype={
+            //     init:function() {
+            //         alert("11");
+            //     }
+            // }
+            var c=new Cat();
+            c.say1()
+            console.log(c.name);
+    </script>
+</head>
+<body>
+
+</body>
+</html>

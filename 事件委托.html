@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="js\jquery.js"></script>
+    <style>
+        *{
+            margin: 0px;
+            padding: 0px;
+        }
+    </style>
+    <script>
+        $(function(){
+            $("button").click(function() {
+                $("ul").append("<li>我是一个li</li>");
+            });
+            // $("li").click(function(){
+            //     console.log($(this).html());
+            // });
+            $("ul").delegate("li","click",function(){
+                console.log($(this).html());
+            })
+
+        });
+    </script>
+</head>
+<body>
+
+    <ul>
+        <li>第一个li</li>
+        <li>第二个li</li>
+        <li>第三个li</li>
+    </ul>
+    <button>新增一个li</button>
+</body>
+</html>

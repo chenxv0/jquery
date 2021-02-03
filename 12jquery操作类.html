@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src=".\..\js\jquery.js" type="text/javascript"></script>
+    <style>
+        div{
+            width:200px;
+            height:200px;
+            background-color: gray;
+        }
+
+        .one{
+            background-color:green;
+        }
+    </style>
+    <script>
+        $(() => {
+            $btn=document.getElementsByTagName("button");
+            // $btn[0].onclick=()=>{
+            //     $("div").addClass("one");
+            // }
+            // $btn[1].onclick=()=>{
+            //     $("div").removeClass("one");
+            // }
+            // $btn[2].onclick=()=>{
+            //     $("div").toggleClass("one");
+            // }
+
+
+            $("button")[0].onclick=()=>{
+                $("div").addClass("one");
+            }
+            $("button")[1].onclick=()=>{
+                $("div").removeClass("one");
+            }
+            $("button")[2].onclick=()=>{
+                $("div").toggleClass("one");
+            }
+        });
+    </script>
+</head>
+<body>
+    <button>添加类</button>
+    <button>删除类</button>
+    <button>切换类</button>
+    <div></div>
+</body>
+</html>

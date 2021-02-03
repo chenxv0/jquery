@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src=".\..\js\jquery.js" type="text/javascript"></script>
+    <script>
+        var arr=[1,2,3,4];
+        // arr.map((val,index)=>{
+        //     console.log(val, index);
+        // })
+        // $.map(arr,(val,index)=>{
+        //     console.log(val, index);
+        // })
+        var obj={0:"a",1:"b",2:"c",length:3};
+        // obj.map((val,index)=>{
+        //     console.log(val, index);
+        // })//不能遍历伪数组
+        // $.map(obj,(val,index)=>{
+        //     console.log(val, index);
+        // })
+        console.log($.map(obj, (val, index) => {
+            return {index:val}
+        }));
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

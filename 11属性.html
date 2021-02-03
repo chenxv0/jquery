@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src=".\..\js\jquery.js" type="text/javascript"></script>
+    <script>
+        $(() => {
+            // console.log(document.getElementsByTagName("div")[0]);
+            // console.log($("div")[0]);
+            // var $div=$("div");
+            // $div[0].setAttribute("im","cx");
+            // $div[1].setAttribute("im","cx1");
+            // $div[2].setAttribute("im","cx2");
+            $("div").attr("im1","ww");
+            // console.log($("div").attr("im"));
+            // console.log($("div").attr("im1","ww"));
+            // $div.removeAttr("im1");
+            $("div").prop("im1");
+            // console.log($("input[type='checkbox']").removeProp("disabled"));
+        });
+    </script>
+</head>
+<body>
+    <div><span>123</span></div>
+    <div><span>123</span></div>
+    <div><span>123</span></div>
+
+    <input type="checkbox" disabled>
+</body>
+</html>

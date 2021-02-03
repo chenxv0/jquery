@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="js\jquery.js"></script>
+    <style>
+        div{
+            width: 100px;
+            height: 200px;
+            background: #f00;
+            display:none;
+        }
+    </style>
+    <script>
+        $(function(){
+            $("button").eq(0).click(
+                function(){
+                    $("div").slideDown(1000,function(){
+                        alert("动画展开完毕！");
+                    });
+                }
+            );
+
+            $("button").eq(1).click(
+                function(){
+                    $("div").slideUp(1000,function(){
+                        alert("动画收起完毕@");
+                    });
+                }
+            );
+
+            $("button").eq(2).click(
+                function(){
+                    $("div").slideToggle(1000,function(){
+                        alert("动画切换完毕！")
+                    });
+                }
+            );
+        });
+    </script>
+</head>
+<body>
+    <button>展开</button>
+    <button>收起</button>
+    <button>切换</button>
+    <div></div>
+</body>
+</html>

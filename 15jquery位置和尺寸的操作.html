@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src=".\..\js\jquery.js" type="text/javascript"></script>
+    <style>
+        *{
+            margin: 0;
+            padding:0;
+        }
+        .father{
+            width:500px;
+            height:500px;
+            background-color: green;
+            position: relative;
+        }
+        .son{
+            width: 100px;
+            height:100px;
+            background-color: yellow;
+            /*margin-left: 200px;*/
+            position: absolute;
+            right:200px;
+        }
+    </style>
+    <script>
+        $(() => {
+            console.log($(".son").offset());
+            console.log($(".son").position());
+
+            console.log($("div").scrollTop());
+
+            $(".father")[0].onScroll=()=>{
+                alert("1");
+            }
+        });
+    </script>
+</head>
+<body>
+    <div class="father">
+        <div class="son"></div>
+    </div>
+</body>
+</html>

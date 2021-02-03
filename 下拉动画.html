@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin:0px;
+            padding:0px;
+        }
+        .nav{
+            border: 1px solid #000;
+            width:330px;
+            /*height:200px;*/
+            margin: 80px auto;
+
+        }
+        ul>li{
+            list-style: none;
+            float:left;
+            width:110px;
+            text-align: center;
+            margin-top:10px;
+        }
+        ul{
+            overflow: hidden;
+            display: block;
+        }
+        .cx{
+            border: 1px solid #000;
+            width:110px;
+            margin:22px auto;
+        }
+        .cx>p{
+            text-indent:8px;
+        }
+        /*.ccc{*/
+            /*display: none;*/
+        /*}*/
+    </style>
+    <script src="js\jquery.js"></script>
+    <script>
+        $(function(){
+            var j=0;
+
+            $(".nav1").click(function(){
+                len=$(".nav").children("ul").length;
+                if(j%2==0){
+                    for(i=1;i<len-1;i++){
+                        $(".nav").children("ul").eq(i).slideUp(1000,function(){
+                        });
+                    }
+                    $(this).children("p").eq(0).html("显示所有内容");
+                    $(".nav1").attr("id",++j);
+                }else{
+                    for(i=1;i<len-1;i++){
+                        $(".nav").children("ul").eq(i).slideDown(1000,function(){
+                        });
+                    }
+                    $(this).children("p").eq(0).html("隐藏所有内容");
+                    $(".nav1").attr("id",++j);
+                }
+
+            });
+
+        });
+    </script>
+</head>
+<body>
+<div class="nav">
+    <ul>
+        <li>佳能</li>
+        <li>索尼</li>
+        <li>三星</li>
+    </ul>
+    <ul class="ccc">
+        <li>尼康</li>
+        <li>松下</li>
+        <li>卡西欧</li>
+    </ul>
+    <ul>
+        <li>富士</li>
+        <li>可达</li>
+        <li>宾得</li>
+    </ul>
+    <ul>
+        <li>理光</li>
+        <li>奥林巴斯</li>
+        <li>明基</li>
+    </ul>
+    <ul>
+        <li>显示其它品牌</li>
+    </ul>
+    <div class="nav1 cx"  id="cs">
+        <p>隐藏所有内容</p>
+    </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin:0px;
+            padding:0px;
+        }
+        .nav{
+            list-style:none;
+            width:300px;
+            margin:100px auto;
+            /*border: 1px solid #000;*/
+        }
+        .nav>li{
+            border: 1px solid #000;
+            line-height: 35px;
+            border-bottom: none;
+            text-indent: 2em;
+            position: relative;
+        }
+        .nav>li:last-child{
+            border-bottom: 1px solid #000;
+            border-bottom-right-radius: 5px;
+            border-bottom-left-radius: 5px;
+        }
+        .nav>li:first-child{
+            border-top-right-radius: 5px;
+            border-top-left-radius: 5px;
+        }
+        .nav>li>span{
+            width: 32px;
+            height: 35px;
+            position: absolute;
+            right:100px;
+            line-height:35px;
+        }
+        .sub{
+            display: none;
+        }
+        .sub>li{
+            list-style: none;
+            background: mediumvioletred;
+            border-bottom: 1px solid #fff;
+        }
+        .sub>li:hover{
+            background: #f00;
+        }
+        .nav>li>.current{
+            /*transform: rotate(90deg);*/
+        }
+    </style>
+    <script src="js\jquery.js"></script>
+    <script>
+        $(function(){
+            $(".nav>li").click(
+                function(){
+                    var $sub=$(this).children('.sub');
+                    $sub.slideDown(1000);
+                    $(this).siblings().children(".sub").slideUp(1000);
+                    // $(this).children("span").addClass("current");
+                    // $(this).siblings().children("span").removeClass("current");
+                    $(this).children("span").html("↓");
+                    $(this).siblings().children("span").html(">");
+                }
+            );
+        });
+    </script>
+</head>
+<body>
+    <!--ul.nav>li{一级菜单}*8-->
+    <ul class="nav">
+        <li >一级菜单<span >></span>
+            <ul class="sub">
+                <li>二级菜单</li>
+                <li>二级菜单</li>
+                <li>二级菜单</li>
+                <li>二级菜单</li>
+                <li>二级菜单</li>
+            </ul>
+        </li>
+        <li>一级菜单<span>></span>
+            <ul class="sub">
+                <li>二级菜单</li>
+                <li>二级菜单</li>
+                <li>二级菜单</li>
+                <li>二级菜单</li>
+                <li>二级菜单</li>
+            </ul></li>
+        <li>一级菜单<span>></span>
+            <ul class="sub">
+                <li>二级菜单</li>
+                <li>二级菜单</li>
+                <li>二级菜单</li>
+                <li>二级菜单</li>
+                <li>二级菜单</li>
+            </ul></li>
+        <li>一级菜单<span>></span>
+            <ul class="sub">
+                <li>二级菜单</li>
+                <li>二级菜单</li>
+                <li>二级菜单</li>
+                <li>二级菜单</li>
+                <li>二级菜单</li>
+            </ul></li>
+        <li>一级菜单<span>></span>
+            <ul class="sub">
+                <li>二级菜单</li>
+                <li>二级菜单</li>
+                <li>二级菜单</li>
+                <li>二级菜单</li>
+                <li>二级菜单</li>
+            </ul></li>
+        <li>一级菜单<span>></span>
+            <ul class="sub">
+                <li>二级菜单</li>
+                <li>二级菜单</li>
+                <li>二级菜单</li>
+                <li>二级菜单</li>
+                <li>二级菜单</li>
+            </ul></li>
+        <li>一级菜单<span>></span>
+            <ul class="sub">
+                <li>二级菜单</li>
+                <li>二级菜单</li>
+                <li>二级菜单</li>
+                <li>二级菜单</li>
+                <li>二级菜单</li>
+            </ul></li>
+        <li>一级菜单<span>></span>
+            <ul class="sub">
+                <li>二级菜单</li>
+                <li>二级菜单</li>
+                <li>二级菜单</li>
+                <li>二级菜单</li>
+                <li>二级菜单</li>
+            </ul></li>
+    </ul>
+</body>
+</html>
